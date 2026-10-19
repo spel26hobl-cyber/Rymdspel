@@ -9,7 +9,10 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         this.transform.position = new Vector2(0, -1);
-        KeyCode.Space
+        if (Input.GetKey(KeyCode.Space))    
+        {
+            Instantiate(Lasershot, this.transform.position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
